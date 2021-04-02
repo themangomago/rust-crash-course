@@ -1,6 +1,11 @@
 mod arrays;
+mod conditionals;
+mod functions;
+mod loops;
+mod pointer;
 mod print;
 mod strings;
+mod structs;
 mod tupels;
 mod types;
 mod vars;
@@ -14,4 +19,9 @@ fn main() {
     tupels::run();
     arrays::run();
     vectors::run();
+    conditionals::run();
+    loops::run();
+    functions::run();
+    pointer::run();
+    structs::run();
 }
