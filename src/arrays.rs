@@ -4,6 +4,7 @@ use std::mem;
 
 pub fn run() {
     let mut numbers: [i32; 5] = [1, 2, 3, 4, 5];
+    let ys: [i32; 500] = [0; 500];
 
     println!("{:?}", numbers);
 

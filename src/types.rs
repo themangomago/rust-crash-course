@@ -6,8 +6,10 @@
     bool
     tuples
     arrays
-
 */
+
+//Aliasing
+type NanoSeconds = u64;
 
 pub fn run() {
     // Default i32

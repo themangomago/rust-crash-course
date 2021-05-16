@@ -1,6 +1,8 @@
 mod arrays;
 mod conditionals;
+mod enums;
 mod functions;
+mod generics;
 mod loops;
 mod pointer;
 mod print;
@@ -8,6 +10,7 @@ mod strings;
 mod structs;
 mod tupels;
 mod types;
+mod vargs;
 mod vars;
 mod vectors;
 
@@ -24,4 +27,7 @@ fn main() {
     functions::run();
     pointer::run();
     structs::run();
+    enums::run();
+    vargs::run();
+    generics::run();
 }

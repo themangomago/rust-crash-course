@@ -13,6 +13,7 @@ struct Person {
     last_name: String,
 }
 
+//Methods are functions attached to objects
 impl Person {
     //Construct person
     fn new(first: &str, last: &str) -> Person {
@@ -25,6 +26,10 @@ impl Person {
     //Get full name
     fn full_name(&self) -> String {
         format!("{} {}", self.first_name, self.last_name)
+    }
+
+    fn set_last_name(&mut self, last: &str) {
+        self.last_name = last.to_string();
     }
 }
 
@@ -46,5 +51,8 @@ pub fn run() {
     println!("{:?}", (c2.0, c2.1, c2.2));
 
     let mut p = Person::new("Tom", "Hall");
+    println!("Person {}", p.full_name());
+
+    p.set_last_name("Test");
     println!("Person {}", p.full_name());
 }
