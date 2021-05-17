@@ -1,7 +1,8 @@
 use std::collections::LinkedList;
 
-use piston_window::{types::Color, Context};
+use piston_window::{Context, G2d, types::Color};
 
+use rand::{thread_rng, Rng};
 use crate::draw::draw_block;
 
 const SNAKE_COLOR: Color = [0.0, 0.5, 0.0, 1.0];
@@ -62,7 +63,7 @@ impl Snake {
         return (head_block.x, head_block.y);
     }
 
-    pub fn move_forward(&self, dir: Option<Direction>) {
+    pub fn move_forward(&mut self, dir: Option<Direction>) {
         match dir {
             Some(d) => self.direction = d,
             None => (),
@@ -91,7 +92,9 @@ impl Snake {
         let removed_block = self.body.pop_back().unwrap();
         self.tail = Some(removed_block);
     }
-
+    pub fn head_direction(&self) -> Direction {
+        self.direction
+    }
     pub fn next_head(&self, dir: Option<Direction>) -> (i32, i32) {
         let (head_x, head_y) = self.head_position();
         let mut moving_dir = self.direction;
